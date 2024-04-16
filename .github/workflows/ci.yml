@@ -8,10 +8,6 @@ jobs:
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.SECRET_KEY }}
-      - name: Set up git folder
-        run: |
-          cd /usr/bin/
-          ls -l | grep -i git |
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
