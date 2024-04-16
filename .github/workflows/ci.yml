@@ -9,7 +9,11 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SECRET_KEY }}
       - name: Set up git folder
-        run: cd /usr/bin/
+        run: |
+          cd /usr/bin/
+          ls -l
+          mkdir git
+          cd git |
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
