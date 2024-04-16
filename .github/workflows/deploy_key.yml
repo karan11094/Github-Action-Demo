@@ -8,10 +8,3 @@ jobs:
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.SECRET_KEY }}
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          BRANCH: main
-          CLEAN: true
-          FOLDER: .
-          SSH: true
