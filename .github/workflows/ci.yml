@@ -1,8 +1,10 @@
-name: Deploy
-on:
-push:
- branches: [ main ]
- - name: Install SSH Client 🔑
-  uses: webfactory/ssh-agent@v0.7.0
-  with:
-    ssh-private-key: ${{ secrets.Deploy-keys }}
+name: Authentication-windows
+on: push
+jobs:
+  ci-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install SSH Client
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.Deploy-keys }}
